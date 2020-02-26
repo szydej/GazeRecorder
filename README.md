@@ -17,7 +17,7 @@ GazeRecorderAPI Integration details:
   b) On current webpage  GazeRecorderAPI.Rec();
 3. Stop Recording
   GazeRecorderAPI.StopRec();
-4.  Save Sesion recording data;
+4.  Save Session recording data
   var SesionReplayData = GazeRecorderAPI.GetRecData();
 
 
