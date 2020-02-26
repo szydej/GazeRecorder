@@ -46,7 +46,9 @@ var url = document.getElementById("urlstart").value;
 
 
 GazeCloudAPI.StartEyeTracking();
-GazeCloudAPI.OnCalibrationComplete  = function(){GazeRecorderAPI.Rec(url);};
+GazeCloudAPI.OnCalibrationComplete  = function(){
+	GazeRecorderAPI.Rec(url);
+};
 
 }
 
