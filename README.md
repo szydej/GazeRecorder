@@ -31,5 +31,7 @@ Read More: https://gazerecorder.com/
 GazeCludAPI.js
 https://github.com/szydej/GazeCloud
 
-Live: http://app.gazerecorder.com
+Live: 
+http://app.gazerecorder.com
+https://app.gazerecorder.com/integrate.html
 
