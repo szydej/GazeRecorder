@@ -12,18 +12,20 @@ The fast & visual way to understand your users.
 GazeRecorderAPI Integration details:
 1. Include JavaScript <script src="https://app.gazerecorder.com/GazeRecorderAPI.js"></script>
 2. Start Recording
-  a) On External webpage  GazeRecorderAPI.Rec(url);
-  b) On current webpage GazeRecorderAPI.Rec();
+  a) On External webpage  
+     GazeRecorderAPI.Rec(url);
+  b) On current webpage
+     GazeRecorderAPI.Rec();
 3. Stop Recording
-GazeRecorderAPI.StopRec();
+  GazeRecorderAPI.StopRec();
 4.  Save Sesion recording data;
-var SesionReplayData = GazeRecorderAPI.GetRecData();
+  var SesionReplayData = GazeRecorderAPI.GetRecData();
 
 
 Sesion Replay:
 1. Include JavaScript <script src="https://app.gazerecorder.com/GazePlayer.js"></script>
 2. Replay recording 
-GazePlayer.PlayResultsData(SesionReplayData  );
+  GazePlayer.PlayResultsData(SesionReplayData  );
 
 Read More: https://gazerecorder.com/
 
