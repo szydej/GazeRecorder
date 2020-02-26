@@ -22,7 +22,7 @@ GazeRecorderAPI Integration details:
 
 
 
-Sesion Replay:
+Session Replay:
 1. Include JavaScript <script src="https://app.gazerecorder.com/GazePlayer.js"></script>
 2. Replay recording 
   GazePlayer.PlayResultsData(SesionReplayData  );
