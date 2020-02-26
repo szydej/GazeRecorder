@@ -1,0 +1,95 @@
+<html>
+<head>
+
+<script src="https://app.gazerecorder.com/GazeCloudAPI.js"></script>
+<script src="https://app.gazerecorder.com/GazeRecorderAPI.js"></script>
+<script src="https://app.gazerecorder.com/GazePlayer.js"></script>
+
+<script>
+GazeRecorderAPI.OnNavigation = function(url)
+	{
+	document.getElementById("url").value = url;
+	}
+
+
+
+function EndRec()
+{
+
+document.getElementById("navi").style.display = 'none';
+GazeRecorderAPI.StopRec();
+GazeCloudAPI.StopEyeTracking();
+
+}
+
+
+
+function PlayRec()
+{
+
+
+EndRec();
+GazePlayer.SetCountainer(document.getElementById("playerdiv"));
+
+var SesionReplayData = GazeRecorderAPI.GetRecData();
+
+GazePlayer.PlayResultsData(SesionReplayData  );
+
+}
+
+
+function start()
+{
+
+document.getElementById("navi").style.display = 'block';
+var url = document.getElementById("urlstart").value;
+
+
+GazeCloudAPI.StartEyeTracking();
+GazeCloudAPI.OnCalibrationComplete  = function(){GazeRecorderAPI.Rec(url);};
+
+}
+
+
+
+function Navigate() 
+{
+var url = document.getElementById("url").value;
+GazeRecorderAPI.Navigate (url );
+}
+
+</script>
+</head>
+
+<body>
+
+<div id = "navi" style="display:none; position: fixed; top: 0px; left: 0px; opacity: .8; ;margin-left:auto;margin-right:auto; z-index: 90;">
+Url:<input type="text" id="url" name="name" required size="50"  value = "https://www.google.com "    >
+<button   onclick="Navigate();"  type="button" >Go</button>
+<button   onclick="PlayRec()"  type="button" >Finish Reording, Play results</button>
+</div>
+
+
+<h1 align= 'center'>GazeRecorderAPI integration example</h1>
+
+
+<div style="background-color: white;position: absolute;top: 50%;left: 50%;margin-right: -50%; transform: translate(-50%, -50%) "> 
+
+
+<p align= 'center' > URL</p>
+<input type="text" id="urlstart" name="name" required size="50"  value = "https://www.google.com "    >
+
+
+<button   onclick="start()"  type="button" >start</button>
+</div>'
+
+
+<div id="playerdiv" style="background-color: white;position: absolute;top: 50%;left: 50%; margin-right: -50%;transform: translate(-50%, -50%) "></div>
+
+
+
+
+</body>
+
+
+</html>
